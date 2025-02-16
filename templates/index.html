@@ -621,7 +621,7 @@
                         <div class="tab-pane fade show active" id="generateContent" role="tabpanel">
                             <div class="d-flex justify-content-between mb-2">
                                 <h4>生成結果</h4>
-                                <button class="btn btn-primary generate-btn" data-tooltip="生成新的問題" onclick="generateQuestions(${index})">
+                                <button class="btn btn-primary generate-btn" data-tooltip="生成新的問題" onclick="generateQuestions(currentIndex)">
                                     <i class="fas fa-magic"></i>
                                     <span>生成</span>
                                 </button>
@@ -649,12 +649,13 @@
         let generatedData = [];
         let currentPage = 1;
         let totalPages = 1;
-        const perPage = {{ per_page }};
+        const perPage = "{{ per_page }}";
         let savedQAPairs = []; // 存储已保存的问答对
         let filteredData = []; // 添加用于存储过滤后的数据
 
+        const roles = JSON.parse('{{ roles|tojson|safe }}');
+
         document.getElementById('roleSelect').addEventListener('change', function(e) {
-            const roles = {{ roles|tojson }};
             const role = roles[e.target.value];
             if (role) {
                 document.getElementById('promptInput').value = role.system_prompt;
@@ -1271,7 +1272,6 @@
 
             // 更新角色选择下拉框
             const roleSelect = document.getElementById('roleSelect');
-            const roles = {{ roles|tojson }};
             roleSelect.innerHTML = `<option value="">${translations[lang].pleaseSelectRole}</option>` +
                 Object.entries(roles).map(([id, role]) => `
                     <option value="${id}">${lang === 'zh' ? role.name : role.name_en}</option>
