@@ -4,8 +4,7 @@ A Flask-based web application for managing and generating patent-related Q&A dat
 
 ## Instantiated system demo
 
-https://github.com/user-attachments/assets/bdd0415b-0b88-4d8b-833b-e49e3f97e685
-
+https://github.com/user-attachments/assets/6faa3d74-d11b-4d7b-9052-efd775a427ad
 
 ## Features
 
