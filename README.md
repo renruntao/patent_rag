@@ -6,6 +6,9 @@ A Flask-based web application for managing and generating patent-related Q&A dat
 
 https://github.com/user-attachments/assets/6faa3d74-d11b-4d7b-9052-efd775a427ad
 
+## Case of Q&A for Patent RAG
+https://github.com/user-attachments/assets/4a01fe61-9346-4b02-8e7f-a0ce332d82b4
+
 ## Features
 
 - **Multi-Language Support**
